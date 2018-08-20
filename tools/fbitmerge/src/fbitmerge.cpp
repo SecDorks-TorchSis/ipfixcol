@@ -290,10 +290,10 @@ int same_data(innerDirMap *first, innerDirMap *second)
 	}
 
 	for (innerDirMap::iterator it = (*first).begin(); it != (*first).end(); it++) {
-		if ((*second).find((*it).first) == (*second).end()) {
+		if (second->find(it->first) == second->end()) {
 			return NOT_OK;
 		}
-		if ((*it).second != (*second)[(*it).first]) {
+		if (it->second != (*second)[it->first]) {
 			return NOT_OK;
 		}
 	}
